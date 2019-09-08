@@ -1,0 +1,83 @@
+<div id=D__ID>
+    <!--third html start -->
+    <div class="container mt-95 mb-3">
+        <div class="row">
+            <!-- form container start -->
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12 mx-auto formbox">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- form start -->
+                        <form id="F__ID">
+                            <h3>Neuro Cognetive Battery Scores</h3>
+                            <!-- participant part for all tsak forms -------------------->
+                            <div id="participant_div__ID">
+                                <div class="form-group">
+                                    <fieldset class="subquestions">
+                                        <label><span class="">Participant</span>
+                                            <input type=text name="Participant" class=form-control id=Participant__ID
+                                                data-id="Participant" />
+                                        </label><br>
+                                        <label><span class="">Participant ID</span>
+                                            <input type=text name="Participant_uid" class=form-control readonly />
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <!-- form group -->
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">Moca Total</span><input type=number step=0.01 class=form-control name=Moca_Total></label></div>
+                                            <div class="col-sm-3"><label><span class="">RAVLT Score</span><input type=number step=0.01 class=form-control name=RAVLT_Score></label></div>
+                                            <div class="col-sm-3"><label><span class="">Trails Part A</span><input type=number step=0.01 class=form-control name=Trails_Part_A></label></div>
+                                            <div class="col-sm-3"><label><span class="">Trails Part B</span><input type=number step=0.01 class=form-control name=Trails_Part_B></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="questiongroup ">
+                                    <fieldset class="">
+                                        <div class=row>
+                                            <div class="col-sm-3"><label><span class="">Stroop 1</span><input type=number step=0.01 class=form-control name=Stroop_1></label></div>
+                                            <div class="col-sm-3"><label><span class="">Stroop 2</span><input type=number step=0.01 class=form-control name=Stroop_2></label></div>
+                                            <div class="col-sm-3"><label><span class="">Stroop 3</span><input type=number step=0.01 class=form-control name=Stroop_3></label></div>
+                                            <div class="col-sm-3"><label><span class="">Stroop 4</span><input type=number step=0.01 class=form-control name=Stroop_4></label></div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                            <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function F__ID() {
+            //-------------------------------------
+            VmInclude: '__COMPONENT__/f/form.01.js'
+            VmInclude: __CURRENT_PATH__/shared-form.js
+            //-------------------------------------
+            $('#F__ID input[name=height]').on('change', function () { cal(); })
+            $('#F__ID input[name=weight]').on('change', function () { cal(); })
+            var cal = function () {
+                var h = $('#F__ID input[name=height]').val() / 100;
+                var w = $('#F__ID input[name=weight]').val();
+                var b = (w / (h * h)).toFixed(2);
+                $('#F__ID input[name=BMI]').val(b);
+            }
+            //-------------------------------------
+
+        }
+    </script>
+    <style>
+        #D__ID .mt-95 {
+            max-width: 800px;
+        }
+
+        VmInclude:__CURRENT_PATH__/wappsystem-form.css
+    </style>
+</div>
