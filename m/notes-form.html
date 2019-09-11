@@ -56,6 +56,7 @@
 			var old_load=m.load;
 			m.load=function(){
 				old_load();
+				$('#submit__ID').hide();
 				//get task name and uid from the input and put the task name to the form
 				task_name=m.input.task_name;
 				task_uid=m.input.task_uid;
@@ -67,10 +68,10 @@
             m.before_submit=function(data,index){
 				//set up relation
 				//do not use I1, I1 is reserved for record partial permission
-				index.I2=task_name;
+				/*index.I2=task_name;
 				index.I3=task_uid;
-				index.I4=part_uid;
-                return true;
+				index.I4=part_uid;*/
+                return false;
             }
             //--------------------------------------------------------
     	}

@@ -16,8 +16,8 @@
         //-------------------------------------
         var old_load=m.load;
         m.load=function(){
-            if(old_load!=undefined) old_load();
-            $('#new__ID').show();
+            if(old_load!=undefined) {old_load();}
+            $('#new__ID').hide();
             if(m.input.task_uid==undefined) $('#new__ID').hide(); //Should create a note from a task module!
         }
         //-------------------------------------
